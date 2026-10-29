@@ -34,6 +34,4 @@
 
 ## How I used AI tools
 
-[EDIT THIS IN YOUR OWN WORDS BEFORE SUBMITTING. Draft based on what actually happened:]
-
 I used an AI chat assistant to break down the brief, and Claude (Claude Code) to help draft the write-up, prompt, diagram and prototype. I checked every number in `ranking.json` against the brief by hand and ran the scoring script to confirm it reproduces them. **Where I corrected the AI:** the first AI breakdown treated all 9 of proposal C's installs as qualifying and didn't separate a scoring formula. I checked the brief again: C counts installs "since 2020", but the criterion is the last 5 years (2021 onward), so I added an install-period check and a warning. I also noticed C has no safety or monitoring plan, so it should not get full team marks.
