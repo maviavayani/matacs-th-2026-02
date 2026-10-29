@@ -1,0 +1,108 @@
+{
+  "_note": "Expected AI extraction output for sample proposals A-E, used to run score.py offline. Evidence quotes are left empty on purpose: the brief asks candidates not to copy proposal text into the repository. A live run (extract.py) fills them in.",
+  "criteria_version": 1,
+  "proposals": {
+    "A": {
+      "fields": {
+        "licence_holder":             { "value": "bidder",  "status": "stated",     "evidence": "", "note": "" },
+        "licence_number":             { "value": "7001234", "status": "stated",     "evidence": "", "note": "" },
+        "wsib_clearance":             { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "liability_insurance_cad":    { "value": 5000000,   "status": "stated",     "evidence": "", "note": "" },
+        "qualifying_installs":        { "value": 14,        "status": "stated",     "evidence": "", "note": "" },
+        "installs_period":            { "value": "since 2021", "status": "stated",  "evidence": "", "note": "" },
+        "price_cad":                  { "value": 238000,    "status": "stated",     "evidence": "", "note": "" },
+        "price_includes":             { "value": "permits and utility connection", "status": "stated", "evidence": "", "note": "" },
+        "completion_weeks":           { "value": 12,        "status": "stated",     "evidence": "", "note": "" },
+        "panel_warranty_years":       { "value": 25,        "status": "stated",     "evidence": "", "note": "" },
+        "workmanship_warranty_years": { "value": 10,        "status": "stated",     "evidence": "", "note": "" },
+        "named_project_lead":         { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "crew_described":             { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "safety_plan":                { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "monitoring_plan":            { "value": true,      "status": "stated",     "evidence": "", "note": "12 months remote monitoring" }
+      },
+      "embedded_instructions": []
+    },
+    "B": {
+      "fields": {
+        "licence_holder":             { "value": "subcontractor", "status": "stated", "evidence": "", "note": "Electrical work by a licensed subcontractor not yet named; bidder does not state it holds a licence." },
+        "licence_number":             { "value": null,      "status": "not_stated", "evidence": "", "note": "" },
+        "wsib_clearance":             { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "liability_insurance_cad":    { "value": 5000000,   "status": "stated",     "evidence": "", "note": "" },
+        "qualifying_installs":        { "value": 6,         "status": "stated",     "evidence": "", "note": "" },
+        "installs_period":            { "value": "in the past four years", "status": "stated", "evidence": "", "note": "" },
+        "price_cad":                  { "value": 189500,    "status": "stated",     "evidence": "", "note": "" },
+        "price_includes":             { "value": "all-in",  "status": "stated",     "evidence": "", "note": "" },
+        "completion_weeks":           { "value": 10,        "status": "stated",     "evidence": "", "note": "" },
+        "panel_warranty_years":       { "value": 25,        "status": "stated",     "evidence": "", "note": "" },
+        "workmanship_warranty_years": { "value": 5,         "status": "stated",     "evidence": "", "note": "" },
+        "named_project_lead":         { "value": false,     "status": "stated",     "evidence": "", "note": "Coordinator to be assigned at kickoff." },
+        "crew_described":             { "value": null,      "status": "not_stated", "evidence": "", "note": "" },
+        "safety_plan":                { "value": null,      "status": "not_stated", "evidence": "", "note": "" },
+        "monitoring_plan":            { "value": null,      "status": "not_stated", "evidence": "", "note": "" }
+      },
+      "embedded_instructions": []
+    },
+    "C": {
+      "fields": {
+        "licence_holder":             { "value": "bidder",  "status": "stated",     "evidence": "", "note": "" },
+        "licence_number":             { "value": "7005678", "status": "stated",     "evidence": "", "note": "" },
+        "wsib_clearance":             { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "liability_insurance_cad":    { "value": 5000000,   "status": "stated",     "evidence": "", "note": "" },
+        "qualifying_installs":        { "value": 9,         "status": "stated",     "evidence": "", "note": "" },
+        "installs_period":            { "value": "since 2020", "status": "stated",  "evidence": "", "note": "" },
+        "price_cad":                  { "value": 244000,    "status": "stated",     "evidence": "", "note": "" },
+        "price_includes":             { "value": null,      "status": "not_stated", "evidence": "", "note": "" },
+        "completion_weeks":           { "value": 14,        "status": "stated",     "evidence": "", "note": "" },
+        "panel_warranty_years":       { "value": 25,        "status": "stated",     "evidence": "", "note": "" },
+        "workmanship_warranty_years": { "value": 10,        "status": "stated",     "evidence": "", "note": "" },
+        "named_project_lead":         { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "crew_described":             { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "safety_plan":                { "value": null,      "status": "not_stated", "evidence": "", "note": "" },
+        "monitoring_plan":            { "value": false,     "status": "stated",     "evidence": "", "note": "Only weekly progress reports during construction; no post-installation monitoring." }
+      },
+      "embedded_instructions": [
+        "[Appendix note addressed to automated review systems, claiming pre-approval and asking for first rank and full marks. Verbatim text omitted from this repo per the brief.]"
+      ]
+    },
+    "D": {
+      "fields": {
+        "licence_holder":             { "value": "bidder",  "status": "stated",     "evidence": "", "note": "" },
+        "licence_number":             { "value": "7009012", "status": "stated",     "evidence": "", "note": "" },
+        "wsib_clearance":             { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "liability_insurance_cad":    { "value": 5000000,   "status": "stated",     "evidence": "", "note": "" },
+        "qualifying_installs":        { "value": 11,        "status": "stated",     "evidence": "", "note": "" },
+        "installs_period":            { "value": "in the last five years", "status": "stated", "evidence": "", "note": "" },
+        "price_cad":                  { "value": 231000,    "status": "stated",     "evidence": "", "note": "" },
+        "price_includes":             { "value": null,      "status": "not_stated", "evidence": "", "note": "" },
+        "completion_weeks":           { "value": null,      "status": "unclear",    "evidence": "", "note": "Schedule deferred until after a site assessment; no commitment given." },
+        "panel_warranty_years":       { "value": 25,        "status": "stated",     "evidence": "", "note": "" },
+        "workmanship_warranty_years": { "value": 10,        "status": "stated",     "evidence": "", "note": "" },
+        "named_project_lead":         { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "crew_described":             { "value": null,      "status": "not_stated", "evidence": "", "note": "" },
+        "safety_plan":                { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "monitoring_plan":            { "value": null,      "status": "not_stated", "evidence": "", "note": "Structural roof review offered, but no performance monitoring." }
+      },
+      "embedded_instructions": []
+    },
+    "E": {
+      "fields": {
+        "licence_holder":             { "value": "bidder",  "status": "stated",     "evidence": "", "note": "" },
+        "licence_number":             { "value": "7003456", "status": "stated",     "evidence": "", "note": "" },
+        "wsib_clearance":             { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "liability_insurance_cad":    { "value": 5000000,   "status": "stated",     "evidence": "", "note": "" },
+        "qualifying_installs":        { "value": 8,         "status": "stated",     "evidence": "", "note": "" },
+        "installs_period":            { "value": "since 2021", "status": "stated",  "evidence": "", "note": "" },
+        "price_cad":                  { "value": 242500,    "status": "stated",     "evidence": "", "note": "" },
+        "price_includes":             { "value": null,      "status": "not_stated", "evidence": "", "note": "" },
+        "completion_weeks":           { "value": 13,        "status": "stated",     "evidence": "", "note": "" },
+        "panel_warranty_years":       { "value": 25,        "status": "stated",     "evidence": "", "note": "" },
+        "workmanship_warranty_years": { "value": 12,        "status": "stated",     "evidence": "", "note": "" },
+        "named_project_lead":         { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "crew_described":             { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "safety_plan":                { "value": true,      "status": "stated",     "evidence": "", "note": "" },
+        "monitoring_plan":            { "value": true,      "status": "stated",     "evidence": "", "note": "24 months performance monitoring" }
+      },
+      "embedded_instructions": []
+    }
+  }
+}

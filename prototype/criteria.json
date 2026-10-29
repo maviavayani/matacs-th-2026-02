@@ -1,0 +1,127 @@
+{
+  "category_id": "commercial-solar-installation",
+  "category_name": "Commercial Solar Installation",
+  "version": 1,
+  "extraction_fields": [
+    {
+      "id": "licence_holder",
+      "type": "enum",
+      "enum": ["bidder", "subcontractor", "none"],
+      "description": "Who holds the Ontario electrical contractor licence (ECRA/ESA) for the electrical work. Use \"bidder\" only if the bidding company states that it holds the licence itself. Use \"subcontractor\" if the work will be done under another company's licence, including one not yet named."
+    },
+    {
+      "id": "licence_number",
+      "type": "string",
+      "description": "The bidder's own ECRA/ESA licence number, if given."
+    },
+    {
+      "id": "wsib_clearance",
+      "type": "boolean",
+      "description": "Does the bidder state that it has current WSIB clearance?"
+    },
+    {
+      "id": "liability_insurance_cad",
+      "type": "number",
+      "description": "Liability insurance coverage the bidder states it carries, in CAD (for example $5M = 5000000)."
+    },
+    {
+      "id": "qualifying_installs",
+      "type": "integer",
+      "description": "Number of completed commercial solar installations of 100 kW or more that the bidder claims."
+    },
+    {
+      "id": "installs_period",
+      "type": "string",
+      "description": "The time period that install count covers, copied as written (for example \"since 2021\" or \"in the past four years\")."
+    },
+    {
+      "id": "price_cad",
+      "type": "number",
+      "description": "Total proposed contract price in CAD. If several prices are given, use the total contract price and explain in note."
+    },
+    {
+      "id": "price_includes",
+      "type": "string",
+      "description": "What the proposal says the price includes (for example permits, utility connection, \"all-in\"), as a short phrase."
+    },
+    {
+      "id": "completion_weeks",
+      "type": "number",
+      "description": "Committed completion time in weeks from contract award. If no firm commitment is made (for example it depends on a later assessment), use status \"unclear\" and value null."
+    },
+    {
+      "id": "panel_warranty_years",
+      "type": "number",
+      "description": "Length of the solar panel warranty in years."
+    },
+    {
+      "id": "workmanship_warranty_years",
+      "type": "number",
+      "description": "Length of the bidder's workmanship (installation) warranty in years."
+    },
+    {
+      "id": "named_project_lead",
+      "type": "boolean",
+      "description": "Does the proposal commit a specific project lead or project manager now? A lead to be assigned later counts as false."
+    },
+    {
+      "id": "crew_described",
+      "type": "boolean",
+      "description": "Does the proposal describe the installation crew (size or composition)?"
+    },
+    {
+      "id": "safety_plan",
+      "type": "boolean",
+      "description": "Does the proposal include a site safety plan?"
+    },
+    {
+      "id": "monitoring_plan",
+      "type": "boolean",
+      "description": "Does the proposal include performance monitoring of the system after installation? Progress reporting during construction does not count."
+    }
+  ],
+  "mandatory": [
+    { "id": "licence", "label": "Ontario electrical contractor licence held by bidder", "field": "licence_holder", "op": "eq", "value": "bidder" },
+    { "id": "wsib", "label": "WSIB clearance", "field": "wsib_clearance", "op": "eq", "value": true },
+    { "id": "insurance", "label": "$5M liability insurance", "field": "liability_insurance_cad", "op": "gte", "value": 5000000 },
+    { "id": "budget", "label": "Price within $260,000 CAD ceiling", "field": "price_cad", "op": "lte", "value": 260000 },
+    { "id": "schedule", "label": "Completion within 16 weeks of award", "field": "completion_weeks", "op": "lte", "value": 16 }
+  ],
+  "weighted": [
+    {
+      "id": "experience",
+      "label": "Relevant experience",
+      "weight": 30,
+      "method": "capped_ratio",
+      "field": "qualifying_installs",
+      "target": 10,
+      "if_missing": "flag",
+      "window": { "field": "installs_period", "years": 5 }
+    },
+    { "id": "price", "label": "Price", "weight": 25, "method": "lowest_ratio", "field": "price_cad", "if_missing": "flag" },
+    { "id": "timeline", "label": "Timeline", "weight": 15, "method": "lowest_ratio", "field": "completion_weeks", "if_missing": "flag" },
+    {
+      "id": "warranty",
+      "label": "Warranty",
+      "weight": 15,
+      "method": "parts",
+      "if_missing": "zero",
+      "parts": [
+        { "method": "capped_ratio", "field": "panel_warranty_years", "target": 25, "share": 0.5 },
+        { "method": "highest_ratio", "field": "workmanship_warranty_years", "share": 0.5 }
+      ]
+    },
+    {
+      "id": "team",
+      "label": "Team and approach",
+      "weight": 15,
+      "method": "checklist",
+      "if_missing": "zero",
+      "fields": ["named_project_lead", "crew_described", "safety_plan", "monitoring_plan"]
+    }
+  ],
+  "warnings": [
+    { "id": "price_scope", "field": "price_includes", "when": "not_stated", "message": "Price scope not stated; confirm it covers the same items as other bids (permits, utility connection)." }
+  ],
+  "tie_breakers": ["experience", "price"]
+}
